@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Programs</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+            font-family: Consolas, "Courier New", monospace;
+            color: #333;
+            margin: 0;
+        }
+        .notepad {
+            width: 80%;
+            max-width: 600px;
+            height: 80vh;
+            padding: 20px;
+            border: 1px solid #aaa;
+            background-color: #f8f8f8;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            white-space: pre-line;
+        }
+        .line {
+            cursor: pointer;
+            color: transparent; /* Hide text by default */
+        }
+        .line:hover {
+            color: #333; /* Reveal on hover */
+            background-color: #e8e8e8; /* Highlight line */
+        }
+    </style>
+</head>
+<body>
+    <div class="notepad">
+        <div class="line" onclick="copyToClipboard(1)"> 1</div>
+        <div class="line" onclick="copyToClipboard(2)">2</div>
+        <div class="line" onclick="copyToClipboard(3)"> 3</div>
+        <div class="line" onclick="copyToClipboard(4)"> 4</div>
+        <div class="line" onclick="copyToClipboard(5)"> 5</div>
+        <div class="line" onclick="copyToClipboard(6)"> 6</div>
+        <div class="line" onclick="copyToClipboard(7)">7</div>
+        <div class="line" onclick="copyToClipboard(8)"> 8</div>
+        <div class="line" onclick="copyToClipboard(9)">9</div>
+        <div class="line" onclick="copyToClipboard(10)">10</div>
+    </div>
+    <script>
+        const labPrograms = [
+            "Lab Program 1: // Your code here...",
+            "Lab Program 2: // Your code here...",
+            "Lab Program 3: // Your code here...",
+            "Lab Program 4: // Your code here...",
+            "Lab Program 5: // Your code here...",
+            "Lab Program 6: // Your code here...",
+            "Lab Program 7: // Your code here...",
+            "Lab Program 8: // Your code here...",
+            "Lab Program 9: // Your code here...",
+            "Lab Program 10: // Your code here..."
+        ];
+
+        function copyToClipboard(index) {
+            const text = labPrograms[index - 1];
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`Lab program ${index} copied to clipboard!`);
+            });
+        }
+    </script>
+</body>
+</html>
